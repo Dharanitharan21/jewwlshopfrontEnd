@@ -7,7 +7,7 @@
   --border-radius: 12px;
 }
 
-/* Login Page Styling */
+
 .login-page {
   height: 100vh;
   display: flex;
@@ -17,7 +17,7 @@
   background-image: url('../images/pexels-pham-ngoc-anh-170983008-2.jpg');
 }
 
-/* Login Container */
+
 .login-container {
   background: rgba(0, 0, 0, 0);
   padding: 30px;
@@ -26,10 +26,14 @@
   text-align: center;
 }
 
+.signup-link{
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
 
 
 
-/* Login Button */
 .login-button {
   width: 100%;
   padding: 12px;
@@ -40,7 +44,7 @@
   border-radius: var(--border-radius);
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 5px 15px rgba(176, 124, 76, 0.4);
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .login-button:hover {

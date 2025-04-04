@@ -61,11 +61,10 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  position: relative;
   z-index: 1000;
 }
 
-.nav-username h1 {
+.navhead {
   font-size: 18px;
   color: #3d1e1e;
   margin-left: 20px;
@@ -96,6 +95,9 @@
   color: #3d1e1e;
   display: flex;
   align-items: center;
+}
+.dropdown-menu.show {
+  display: block; /* Show when dropdown is open */
 }
 
 .dropdown-item:hover {
@@ -196,7 +198,7 @@
     left: 10px;
 
   }
-
+ 
   /* Navbar Adjustments */
   .navbar {
     display: flex;
@@ -238,7 +240,7 @@
   .nav_link.open {
     display: flex;
     position:absolute;
-    top: 0px;
+    top: 20px;
   }
 
   /* Login & Signup Buttons */

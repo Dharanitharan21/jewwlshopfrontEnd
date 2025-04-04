@@ -14,21 +14,20 @@ function MyNavbar() {
       setName(storedName.toUpperCase());
     }
   }, []);
-  //dropdown
+
 
   const handleLogout = (event) => {
     console.log("Logout button clicked");
     event.stopPropagation(); // Prevent dropdown interference
     localStorage.clear();
-
+    
     navigate('/login'); // Redirect to the login page
   };
   const [menuOpen, setMenuOpen] = useState(false);
   const menubar=()=>{
-    console.log("metal");
-    
-    setMenuOpen(!menuOpen)
     setDropdownOpen(false)
+    setMenuOpen(!menuOpen)
+    
   }
   
   return (
@@ -57,7 +56,7 @@ function MyNavbar() {
              {name}
             </h1>
             {dropdownOpen && (
-              <div className="dropdown-menu">
+              <div className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                 <button className="dropdown-item" onClick={handleLogout}><img className='logout' src={logout} />
                   Logout
                 </button>

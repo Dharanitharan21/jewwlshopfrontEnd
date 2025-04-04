@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import '../Styles/login.css'
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [userInput, setUserInput] = useState({
@@ -100,7 +100,7 @@ function Login() {
                                 ),
                             }}
                         />
-                   
+                        <Link className="signup-link" to="/signup">Signup</Link>
                         <Button type="submit" variant="contained" className="login-button">
                             Login
                         </Button>
