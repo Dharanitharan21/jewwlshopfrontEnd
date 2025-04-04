@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logout from '../Icons/logout.png'
-import '../Styles/navbar.css'
+import logout from '../Icons/logout.png';
+import '../Styles/navbar.css';
 
 function MyNavbar() {
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedName = localStorage.getItem("name");
@@ -12,73 +14,75 @@ function MyNavbar() {
       setName(storedName.toUpperCase());
     }
   }, []);
-
-  const navigate = useNavigate()
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+  //dropdown
 
   const handleLogout = (event) => {
     console.log("Logout button clicked");
-    event.stopPropagation();
+    event.stopPropagation(); // Prevent dropdown interference
     localStorage.clear();
-    navigate('/login');
+
+    navigate('/login'); // Redirect to the login page
   };
-
-  const menubar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menubar=()=>{
+    console.log("metal");
+    
     setMenuOpen(!menuOpen)
+    setDropdownOpen(false)
   }
-
+  
   return (
     <div>
       <nav className='navbar'>
         <div className='nav-logo'>
-          Jewellaryshop
+          jewellaryshop
         </div>
-
-        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-          <ul className={`nav_link ${menuOpen ? "open" : ""}`}>
+      
+      <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        <ul className={`nav_link ${menuOpen ? "open" : ""}`}>
           <li><Link className="scroll-link" to="/">Home</Link></li>
           <li><Link className="scroll-link" to="/buypage">Shop</Link></li>
-
-            <li><Link className="scroll-link" to="/sellpage">Sell</Link></li>
-          </ul>
-
-          {name ? (
-            <div className="nav-username">
-              <h1
-                className="navhead"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                style={{ cursor: 'pointer' }}
-              >
-                {name}
-              </h1>
-              {dropdownOpen && (
-                <div className="dropdown-menu">
-                  <button className="dropdown-item" onClick={handleLogout}>
-                    <img className='logout' src={logout} alt="logout-icon" />
-                    Logout
-                  </button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className={`nav_btns ${menuOpen ? "open" : ""}`}>
-              <Link to="/login">
-                <button className="login-btn">Login</button>
-              </Link>
-              <Link to="/signup">
-                <button className="login-btn">Sign Up</button>
-              </Link>
-            </div>
-          )}
-
-          <div className="hamburger" onClick={menubar}>
-            ☰
+          <li><Link className="scroll-link" to="/sellpage">Sell</Link></li>
+        
+        </ul>
+        {name ? (
+          <div className="nav-username">
+            <h1
+              className="navhead"
+              onClick={() => {
+                console.log("Dropdown clicked");
+                setDropdownOpen(!dropdownOpen);}}
+              style={{ cursor: 'pointer' }}
+            >
+             {name}
+            </h1>
+            {dropdownOpen && (
+              <div className="dropdown-menu">
+                <button className="dropdown-item" onClick={handleLogout}><img className='logout' src={logout} />
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
+        ) : (
+          <div className={`nav_btns ${menuOpen ? "open" : ""}`}>
+            <Link to="/login">
+              <button className="login-btn">Login</button>
+            </Link>
+            
+            <Link to="/signup">
+              <button className="login-btn">Sign Up</button>
+            </Link>
+            
+          </div>
+        )}
+        
         </div>
+        <div className="hamburger" onClick={menubar}>
+        ☰
+      </div>
       </nav>
     </div>
-  )
+  );
 }
-
 export default MyNavbar;

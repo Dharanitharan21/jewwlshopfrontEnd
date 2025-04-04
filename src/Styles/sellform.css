@@ -1,11 +1,4 @@
-.selldiv{
-    display: flex; 
-    justify-content: space-around;
-    gap: 10px;
-}
-.selltxt{
-    width: 362px !important;
-}
+
 .custom-file-input {
     display: inline-block;
     font-size: 0.95rem;
@@ -30,5 +23,19 @@
     transition: background-color 0.3s ease;
   }
   
+@media (min-width: 800px) {
+  .selldiv{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+.selltxt{
+    width: 362px !important;
+}
+.selbox{
+  width: 800 !important;
+}
+  
+}
 
   

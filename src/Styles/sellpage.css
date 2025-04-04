@@ -111,12 +111,7 @@
   display: flex;
   justify-content: space-between;
 }
-.search{
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  right: 320px;
-}
+
 @media (max-width: 1024px) {
     .product-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -127,16 +122,12 @@
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
 }
 
 @media (max-width: 480px) {
     .product-grid {
         grid-template-columns: repeat(1, 1fr);
     }
-    .search{
-      display: flex;
-      justify-content: flex-end;
-      position: relative;
-      right: 0px;
-    }
+   
 }
