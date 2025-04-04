@@ -1,0 +1,51 @@
+:root {
+  --primary-color: #b07c4c; /* Rich Gold */
+  --secondary-color: #3d1e1e; /* Dark Burgundy */
+  --background-gradient: linear-gradient(to right, #fff5f5, #fae1dd);
+  --text-color: #4a4a4a;
+  --input-bg: #f7f3f0;
+  --border-radius: 12px;
+}
+
+
+.signup-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-gradient);
+  background-image: url('../images/sheilabox-RYGKjpD3Rgs-unsplash\ \(1\).jpg');
+}
+
+.signup-container {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: 700 !important;
+  background: rgba(0, 0, 0, 0.485);
+  padding: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.636);
+  max-width: 400px;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--secondary-color) !important;
+  color: white;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(176, 124, 76, 0.4);
+  margin-top: 20px !important;
+}
+
+.signup-button:hover {
+
+  box-shadow: 0px 7px 20px rgba(176, 124, 76, 0.5);
+}
+
+
+  
+ 
+  

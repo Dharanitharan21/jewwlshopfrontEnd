@@ -1,0 +1,22 @@
+
+.buypage-container {
+    width: 100%;
+    background-color: #f9f9f9; 
+}
+.buypage-container .card {
+    margin-bottom: 30px;
+  }
+
+
+  
+
+  .cart-button {
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+ .buypage-cart{
+    width: 24px;
+    height: 24px;
+ }

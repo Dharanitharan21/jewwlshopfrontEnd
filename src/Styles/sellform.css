@@ -1,0 +1,34 @@
+.selldiv{
+    display: flex; 
+    justify-content: space-around;
+    gap: 10px;
+}
+.selltxt{
+    width: 362px !important;
+}
+.custom-file-input {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: #fff;
+    background-color: #1408ffc2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer
+  }
+  
+  .custom-file-input:hover {
+    background-color: #1408ffc2;
+  }
+  
+  .custom-file-input::file-selector-button {
+    font-weight: bold;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  

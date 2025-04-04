@@ -1,0 +1,52 @@
+:root {
+  --primary-color: #b07c4c; /* Rich Gold */
+  --secondary-color: #3d1e1e; /* Dark Burgundy */
+  --background-gradient: linear-gradient(to right, #fff5f5, #fae1dd);
+  --text-color: #4a4a4a;
+  --input-bg: #f7f3f0;
+  --border-radius: 12px;
+}
+
+/* Login Page Styling */
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-gradient);
+  background-image: url('../images/pexels-pham-ngoc-anh-170983008-2.jpg');
+}
+
+/* Login Container */
+.login-container {
+  background: rgba(0, 0, 0, 0);
+  padding: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.636);
+  max-width: 400px;
+  text-align: center;
+}
+
+
+
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--secondary-color);
+  color: white;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(176, 124, 76, 0.4);
+  margin-top: 15px;
+}
+
+.login-button:hover {
+
+  box-shadow: 0px 7px 20px rgba(176, 124, 76, 0.5);
+}
+
+
+  
