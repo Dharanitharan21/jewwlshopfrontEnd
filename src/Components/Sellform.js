@@ -155,11 +155,13 @@ function Sellform({ open, onHide, product, onSuccess }) {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
-                    width: 400,
-                    minWidth: 800,
+                    width: { xs: '90%', sm: 500 },
+                    minWidth: 500,
                     bgcolor: "background.paper",
                     boxShadow: 24,
-                    p: 4,
+                    p: 3,
+                    maxHeight: "90vh", // limit height
+                    overflowY: "auto",
                     borderRadius: 2,
                 }}
             >

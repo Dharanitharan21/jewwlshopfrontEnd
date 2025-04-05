@@ -23,19 +23,32 @@
     transition: background-color 0.3s ease;
   }
   
-@media (min-width: 800px) {
+@media (min-width: 500px) {
   .selldiv{
     display: flex;
     justify-content: space-around;
     gap: 10px;
 }
 .selltxt{
-    width: 362px !important;
+    width: 214px !important;
 }
-.selbox{
-  width: 800 !important;
-}
+
   
+}
+@media (max-width: 430px) {
+  .selldiv {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .selltxt {
+    width: 100% !important;
+  }
+
+  .selbox {
+    min-width: 90vw !important;
+    padding: 20px 15px !important;
+  }
 }
 
   

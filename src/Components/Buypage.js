@@ -120,7 +120,7 @@ function Buypage() {
                 {/* Cart Button */}
                 <div className="cart-button">
                     <Button variant="primary" onClick={() => setShow(true)}>
-                        <img src={cart} className='buypage-cart'/>({state.count})
+                       View cart <img src={cart} className='buypage-cart'/>
                     </Button>
                 </div>
 
@@ -142,9 +142,9 @@ function Buypage() {
                                                 src={`https://jewellaryshop.onrender.com${item.image}`} 
                                                 className="cart-card-img"
                                             />
-                                            <Card.Body>
+                                            <Card.Body className='buycrdbody'>
                                                 <Card.Title>{item.name}</Card.Title>
-                                                <Card.Text>Price: ${item.price}</Card.Text>
+                                                <Card.Text>Price: Rs{item.price}</Card.Text>
                                                 <Card.Text>Quantity: {item.quantity}</Card.Text>
                                                 <Button variant="danger" onClick={() => removeFromCart(item)}>Remove</Button>
                                             </Card.Body>
@@ -156,7 +156,7 @@ function Buypage() {
                     </Modal.Body>
                     <Modal.Footer>
                         <h5>Total Items: {state.count}</h5>
-                        <h5>Total Amount: ${state.totalprice.toFixed(2)}</h5>
+                        <h5>Total Amount: Rs{state.totalprice.toFixed(2)}</h5>
                     </Modal.Footer>
                 </Modal>
 
@@ -175,17 +175,16 @@ function Buypage() {
                                         <Card.Img 
                                             variant="top" 
                                             src={`https://jewellaryshop.onrender.com${item.image}`} 
-                                            className="product-card-img" 
+                                            className="cart-card-img" 
                                         />
                                         <Card.Body>
-                                            <Card.Title>{item.name}</Card.Title>
-                                            <Card.Text><strong>Category:</strong> {item.category}</Card.Text>
-                                            <Card.Text><strong>Price:</strong> ${item.price}</Card.Text>
+                                            <div className='buycartdiv'><Card.Title>{item.name}</Card.Title>
+                                             <Card.Text><strong>Price:</strong> Rs:{item.price}</Card.Text></div>
                                             <Card.Text>{item.description?.slice(0, 90)}...</Card.Text>
+                                           
+                                            <Button variant="primary" onClick={() => addToCart(item)}><img src={cart} className='buypage-cart'/>Add to cart</Button>
                                         </Card.Body>
-                                        <Card.Footer className="d-flex justify-content-between align-items-center">
-                                            <Button variant="primary" onClick={() => addToCart(item)}>Add To Cart</Button>
-                                        </Card.Footer>
+                                       
                                     </Card>
                                 </Col>
                                

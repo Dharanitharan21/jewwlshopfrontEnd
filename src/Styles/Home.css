@@ -199,9 +199,21 @@ body {
     }
 }
     
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
     .homecard2 {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .homecard2 .model-card:nth-child(1) {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    .homecard2 .model-card:nth-child(7) {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+    .homecard2 .model-card:nth-child(6) {
+        grid-column: span 3;
+        grid-row: span 1;
     }
 }
 
@@ -209,12 +221,15 @@ body {
     
     .homecard2 .model-card:nth-child(2) {
         grid-column: span 3;
-        grid-row: span 2;
+        grid-row: span 1;
     }
-    
     .homecard2 .model-card:nth-child(3) {
         grid-column: span 3;
         grid-row: span 2;
+    }
+    .homecard2 .model-card:nth-child(4) {
+        grid-column: span 3;
+        grid-row: span 1;
     }
     .homecard2 .model-card:nth-child(5) {
         grid-column: span 3;
@@ -226,4 +241,20 @@ body {
     .homecard2 {
         grid-template-columns: repeat(1, 1fr);
     }
+    .homecard2 .model-card:nth-child(2) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+     
+    .homecard2 .model-card:nth-child(3) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+    
+    .homecard2 .model-card:nth-child(5) {
+        grid-column: span 3;
+        grid-row: span 1;
+    }
+  
+
 }

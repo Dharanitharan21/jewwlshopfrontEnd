@@ -96,15 +96,16 @@ function Sellpage() {
                 <Card.Img variant="top" src={`https://jewellaryshop.onrender.com${product.image}` } className="cardimg" />
                 <Card.Body className="card-content">
                  
-                  <Card.Title>{product.category}</Card.Title>
+                  <Card.Title>{product.name}</Card.Title>
+                  <div className="sellcard-cate">
                   <Card.Text>{product.materialtype}</Card.Text>
-                  <Card.Text>{product.name}</Card.Text>
+                  <Card.Text>{product.category}</Card.Text></div>
                   <Card.Text>{product.description}</Card.Text>
                   <div className="cardprice">
                   <Card.Text>Price: Rs:{product.price}</Card.Text>
                   <Card.Text>Stock: {product.stock}</Card.Text></div>
-                  <Button size="small" color="secondary" onClick={() => handleEdit(product)}>Edit</Button>
-                  <Button size="small" color="secondary" onClick={() => handleDelete(product._id)}>
+                  <Button  color="secondary" onClick={() => handleEdit(product)}>Edit</Button>
+                  <Button  color="secondary" onClick={() => handleDelete(product._id)}>
                     Delete
                   </Button>
                 </Card.Body>
