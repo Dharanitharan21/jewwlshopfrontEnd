@@ -42,7 +42,9 @@ function Sellpage() {
   };
   useEffect(() => {
     fetchUserProducts();
-  }, [])
+    console.log(loggedInUserId);
+    
+  }, [loggedInUserId])
 
   const handleAddClick = () => {
     setSelectedProduct(null); // ✅ Ensure product is reset
