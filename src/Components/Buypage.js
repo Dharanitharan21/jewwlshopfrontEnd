@@ -120,7 +120,7 @@ function Buypage() {
                 {/* Cart Button */}
                 <div className="cart-button">
                     <Button variant="primary" onClick={() => setShow(true)}>
-                       View cart <img src={cart} className='buypage-cart'/>
+                       View cart <img src={cart} alt='' className='buypage-cart'/>
                     </Button>
                 </div>
 
@@ -139,7 +139,7 @@ function Buypage() {
                                         <Card className="cart-card">
                                             <Card.Img 
                                                 variant="top" 
-                                                alt=""
+                                                alt={item.name || "product image"}
                                                 src={`https://jewellaryshop.onrender.com${item.image}`} 
                                                 className="cart-card-img"
                                             />
@@ -174,7 +174,7 @@ function Buypage() {
                                 <Col key={item._id} xs={12} sm={6} md={4} lg={3}>
                                     <Card className="product-card">
                                         <Card.Img 
-                                            alt=""
+                                            alt={item.name || "product image"}
                                             variant="top" 
                                             src={`https://jewellaryshop.onrender.com${item.image}`} 
                                             className="cart-card-img" 
@@ -184,7 +184,7 @@ function Buypage() {
                                              <Card.Text><strong>Price:</strong> Rs:{item.price}</Card.Text></div>
                                             <Card.Text>{item.description?.slice(0, 90)}...</Card.Text>
                                            
-                                            <Button variant="primary" onClick={() => addToCart(item)}><img src={cart} className='buypage-cart'/>Add to cart</Button>
+                                            <Button variant="primary" onClick={() => addToCart(item)}><img src={cart} className='buypage-cart' alt=''/>Add to cart</Button>
                                         </Card.Body>
                                        
                                     </Card>
