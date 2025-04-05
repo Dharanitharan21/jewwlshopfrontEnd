@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import logout from '../Icons/logout.png';
 import '../Styles/navbar.css';
 
+
 function MyNavbar() {
   const [name, setName] = useState('');
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -11,7 +12,7 @@ function MyNavbar() {
   useEffect(() => {
     const storedName = localStorage.getItem("name");
     if (storedName) {
-      setName(storedName.toUpperCase());
+      setName(storedName.toUpperCase().charAt(0));
     }
   }, []);
 
@@ -46,6 +47,7 @@ function MyNavbar() {
         </ul>
         {name ? (
           <div className="nav-username">
+            
             <h1
               className="navhead"
               onClick={() => {
@@ -53,13 +55,14 @@ function MyNavbar() {
                 setDropdownOpen(!dropdownOpen);}}
               style={{ cursor: 'pointer' }}
             >
-             {name}
+            {name}
             </h1>
             {dropdownOpen && (
               <div className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                 <button className="dropdown-item" onClick={handleLogout}><img className='logout' alt="Logout icon" src={logout} />
                   Logout
                 </button>
+                
               </div>
             )}
           </div>
