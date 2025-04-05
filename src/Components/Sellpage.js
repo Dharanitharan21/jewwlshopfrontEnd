@@ -18,7 +18,7 @@ function Sellpage() {
   const [selectedTypes, setSelectedTypes] = useState([]);
 
 
-  const fetchUserProducts = () => {
+  const  refreshProducts = () => {
     if (!token) {
       alert("Authentication required. Please log in.");
       return;
@@ -41,10 +41,34 @@ function Sellpage() {
       });
   };
   useEffect(() => {
-    fetchUserProducts();
-    console.log(loggedInUserId);
     
-  }, [loggedInUserId])
+  const fetchUserProducts = () => {
+    if (!token) {
+      alert("Authentication required. Please log in.");
+      return;
+    }
+
+    axios
+      .get(`https://jewellaryshop.onrender.com/productapi/getbyuser/${loggedInUserId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        setUserProducts(response.data.data);
+        console.log("happy");
+        
+      })
+      .catch((error) => {
+        console.error("Error fetching user products:", error);
+        alert("Failed to load products.");
+      });
+  }
+    fetchUserProducts();
+    
+    
+  }, [loggedInUserId ,token])
+
 
   const handleAddClick = () => {
     setSelectedProduct(null); // ✅ Ensure product is reset
@@ -62,7 +86,7 @@ function Sellpage() {
       },
     })
       .then(() => {
-        fetchUserProducts();
+        refreshProducts();
         alert("Product deleted successfully");
       })
       .catch((error) => {
@@ -124,7 +148,7 @@ function Sellpage() {
       </div>
 
       <Sellform open={isFormOpen} onHide={() => setIsFormOpen(false)}
-        onSuccess={fetchUserProducts}
+        onSuccess={refreshProducts}
         product={selectedProduct || {}} />
     </div>
   );
