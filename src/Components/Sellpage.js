@@ -32,6 +32,7 @@ function Sellpage() {
       })
       .then((response) => {
         setUserProducts(response.data.data);
+        console.log("happy");
         
       })
       .catch((error) => {
@@ -92,7 +93,7 @@ function Sellpage() {
           {filteredProducts.length !== 0 ? (
             filteredProducts.map((product) => (
               <Card key={product._id} className="product-card">
-                <Card.Img variant="top" src={`https://jewellaryshop.onrender.com${product.image}`} alt="product name" className="cardimg" />
+                <Card.Img variant="top" src={`https://jewellaryshop.onrender.com${product.image}`} alt="" className="cardimg" />
                 <Card.Body className="card-content">
                  
                   <Card.Title>{product.name}</Card.Title>
