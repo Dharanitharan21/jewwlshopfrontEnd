@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer } from 'react';
-import { Container, Row, Col, Button, Card, Modal } from 'react-bootstrap';
+import {  Row, Col, Button, Card, Modal } from 'react-bootstrap';
 import Category from './Category';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MyNavbar from './MyNavbar';
@@ -139,6 +139,7 @@ function Buypage() {
                                         <Card className="cart-card">
                                             <Card.Img 
                                                 variant="top" 
+                                                alt={item.name}
                                                 src={`https://jewellaryshop.onrender.com${item.image}`} 
                                                 className="cart-card-img"
                                             />
@@ -173,6 +174,7 @@ function Buypage() {
                                 <Col key={item._id} xs={12} sm={6} md={4} lg={3}>
                                     <Card className="product-card">
                                         <Card.Img 
+                                        alt={item.name}
                                             variant="top" 
                                             src={`https://jewellaryshop.onrender.com${item.image}`} 
                                             className="cart-card-img" 

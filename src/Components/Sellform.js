@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Modal, Box, TextField, Typography, Button, FormControl, InputLabel, Select, MenuItem, Autocomplete } from "@mui/material";
+import { Modal, Box, TextField, Typography, Button, Autocomplete } from "@mui/material";
 import '../Styles/sellform.css'
 const jewelryOptions = [
     { materialtype: "diamond", category: ["bangles", "chains", "necklaces", "rings", "bracelets", "earrings"] },

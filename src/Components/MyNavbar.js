@@ -57,7 +57,7 @@ function MyNavbar() {
             </h1>
             {dropdownOpen && (
               <div className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
-                <button className="dropdown-item" onClick={handleLogout}><img className='logout' src={logout} />
+                <button className="dropdown-item" onClick={handleLogout}><img className='logout' alt="Logout icon" src={logout} />
                   Logout
                 </button>
               </div>
