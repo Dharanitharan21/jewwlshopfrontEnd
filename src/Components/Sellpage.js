@@ -41,7 +41,7 @@ function Sellpage() {
   };
   useEffect(() => {
     fetchUserProducts();
-  }, [loggedInUserId])
+  }, [])
 
   const handleAddClick = () => {
     setSelectedProduct(null); // ✅ Ensure product is reset
@@ -92,7 +92,7 @@ function Sellpage() {
           {filteredProducts.length !== 0 ? (
             filteredProducts.map((product) => (
               <Card key={product._id} className="product-card">
-                <Card.Img variant="top" src={`https://jewellaryshop.onrender.com${product.image}` } className="cardimg" />
+                <Card.Img variant="top" src={`https://jewellaryshop.onrender.com${product.image}`} alt={product.name || "product name"} className="cardimg" />
                 <Card.Body className="card-content">
                  
                   <Card.Title>{product.name}</Card.Title>
